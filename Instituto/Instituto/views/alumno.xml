@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="instituto_alumno_action" name="alumno" res_model="instituto.alumno" />
+
+        <record id="instituto_alumno_view_tree" model="ir.ui.view">
+            <field name="name">Lista de alumnos</field>
+            <field name="model">instituto.alumno</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="numeroMatricula" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="edad" />
+                    <field name="curso" />
+                    <field name="dNIProfesorTutor" />
+                    <field name="dNITutorLegal" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="instituto_alumno_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de alumnos</field>
+            <field name="model">instituto.alumno</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="numeroMatricula" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="edad" />
+                    <field name="curso" />
+                    <field name="dNIProfesorTutor" />
+                    <field name="dNITutorLegal" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Instituto" id="menu_instituto" sequence="10" />
+        <menuitem name="Personas" id="menu_personas" parent="menu_instituto" sequence="10"/>
+        <menuitem name="Lugares" id="menu_lugares" parent="menu_instituto" sequence="10"/>
+        <menuitem name="Alumno" id="menu_alumno" action="instituto_alumno_action" parent="menu_personas" sequence="10"/>
+    </data>
+</odoo>

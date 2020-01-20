@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="instituto_profesor_tutor_action" name="profesor_tutor" res_model="instituto.profesor_tutor" />
+
+        <record id="instituto_profesor_tutor_view_tree" model="ir.ui.view">
+            <field name="name">Lista de profesores tutores</field>
+            <field name="model">instituto.profesor_tutor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="edad" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="instituto_profesor_tutor_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de profesores tutores</field>
+            <field name="model">instituto.profesor_tutor</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="edad" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Profesor tutor" id="menu_profesor_tutor" action="instituto_profesor_tutor_action" parent="menu_personas" sequence="10"/>
+    </data>
+</odoo>
